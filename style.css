@@ -1,0 +1,240 @@
+/* Configurações Globais */
+/* Remove margens e espaçamentos padrão e padroniza o cálculo das dimensões. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define a fonte, as cores e o espaçamento padrão da página. */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+    color: #222222;
+    line-height: 1.6;
+}
+
+/* Mantém a barra de navegação fixa no topo e alinha seu conteúdo. */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #dddddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+/* Centraliza o conteúdo da navegação e distribui o logotipo e os links. */
+.navbar-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;		
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estiliza o nome do site usado como logotipo. */
+.navbar-logo {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #111111;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Destaca em laranja uma parte do logotipo. */
+.navbar-logo span {
+    color: #ff7a00; /* Destaque em laranja combinado com o seu site */
+}
+
+/* Alinha os links de navegação e define o espaço entre eles. */
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Define a aparência padrão dos links de navegação. */
+.navbar-item {
+    font-size: 0.9rem;
+    color: #555555;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+}
+
+/* Destaca o link de navegação quando o ponteiro passa sobre ele. */
+.navbar-item:hover {
+    color: #ff7a00;
+}
+
+
+/* Cabeçalho */
+/* Estiliza e posiciona o cabeçalho principal abaixo da navegação fixa. */
+header {
+    background-color: #ffffff;
+    border-top: 5px solid #ff7a00; /* Laranja principal */
+    border-bottom: 1px solid #dddddd;
+    padding: 30px 20px;
+    text-align: center;
+    max-width: 1100px;
+    /* Aumentado de 20px para 75px para empurrar o conteúdo para baixo da navbar fixa */
+    margin: 75px auto 20px auto; 
+}
+
+/* Define a hierarquia visual do título principal. */
+header h1 {
+    font-size: 2rem;
+    color: #111111;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Destaca o CJB no título da página Sobre, como no logotipo da navegação. */
+.pagina-sobre header h1 span {
+    color: #ff7a00;
+}
+
+/* Estiliza o texto de apoio do cabeçalho. */
+header p {
+    font-size: 1.05rem;
+    color: #666666;
+}
+
+/* Container que força o layout de duas colunas lado a lado */
+/* Centraliza o conteúdo da página e o organiza em colunas. */
+.container-principal {
+    max-width: 1100px;
+    margin: 0 auto 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row; /* Garante que fiquem lado a lado */
+    gap: 30px;
+}
+
+/* Coluna Principal (Esquerda) */
+/* Reserva mais espaço para a coluna de conteúdo principal. */
+main {
+    flex: 2.5; /* Ocupa mais espaço */
+    min-width: 0; /* Impede que o flexbox quebre com textos longos */
+}
+
+/* Empilha os blocos da introdução com espaçamento entre eles. */
+section#introducao {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Cria a aparência de cartão para cada artigo. */
+article {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* Destaca os títulos dos artigos com um sublinhado laranja. */
+article h2 {
+    font-size: 1.5rem;
+    color: #111111;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ff7a00;
+    padding-bottom: 6px;
+    display: inline-block; /* Faz a linha laranja ficar só embaixo do título */
+}
+
+/* Ajusta a leitura, o alinhamento e o espaçamento dos parágrafos. */
+article p {
+    font-size: 1.05rem;
+    color: #333333;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Barra Lateral (Direita) */
+/* Estiliza o painel de notícias ao lado do conteúdo principal. */
+.sidebar {
+    flex: 1; /* Ocupa 1 parte */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    height: fit-content;
+    border-top: 4px solid #ff7a00;
+}
+
+/* Destaca o título da barra lateral. */
+.sidebar-titulo {
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ff7a00;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+/* Cada bloco de notícia na direita (estilo G1: linha divisória sutil) */
+/* Organiza a imagem e o texto de cada notícia lado a lado. */
+.bloco-noticia {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    text-decoration: none;
+    padding: 14px 0;
+    border-bottom: 1px solid #e5e5e5;
+    transition: all 0.2s ease;
+}
+
+/* Padroniza as dimensões e o corte das miniaturas. */
+.bloco-noticia img {
+    width: 90px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+/* Ajusta o espaçamento superior do primeiro item de notícia. */
+.bloco-noticia:first-of-type {
+    padding-top: 5px; /* Ajuste para o primeiro item */
+}
+
+/* Remove a divisória abaixo do último item de notícia. */
+.bloco-noticia:last-child {
+    border-bottom: none; /* Remove a linha do último item */
+}
+
+/* Estiliza a categoria de cada notícia. */
+.bloco-noticia .categoria {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #ff7a00;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* Estiliza o título de cada notícia da barra lateral. */
+.bloco-noticia h3 {
+    font-size: 0.95rem;
+    color: #222222;
+    line-height: 1.4;
+    font-weight: normal; /* No G1 as chamadas laterais costumam ter fonte normal, não negrito pesado */
+}
+
+/* Efeito ao passar o mouse */
+/* Destaca o título da notícia quando o ponteiro passa sobre ele. */
+.bloco-noticia:hover h3 {
+    color: #ff7a00; 
+    text-decoration: underline;
+}
